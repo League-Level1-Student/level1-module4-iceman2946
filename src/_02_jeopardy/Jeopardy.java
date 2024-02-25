@@ -76,7 +76,15 @@ public class Jeopardy implements ActionListener {
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-		thirdButton= createButton($600);
+		thirdButton= createButton("$600");
+		thirdButton.addActionListener(this);
+		quizPanel.add(thirdButton);
+		fourthButton= createButton("$800");
+		fourthButton.addActionListener(this);
+		quizPanel.add(fourthButton);
+		fifthButton=createButton("$1000");
+		fifthButton.addActionListener(this);
+		quizPanel.add(fifthButton);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -107,7 +115,7 @@ public class Jeopardy implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 		
 		// Remove this temporary message after testing:
-		JOptionPane.showMessageDialog(null, "pressed " + ((JButton) e.getSource()).getText() + " button");
+		
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
@@ -122,6 +130,16 @@ public class Jeopardy implements ActionListener {
 		if(buttonPressed== secondButton) {
 			askQuestion("__ states were added to the United States during the 19th century.","29",400);
 		}
+		if(buttonPressed== thirdButton) {
+			askQuestion("In _____, the first U.S. dollar was printed. ","1862",600);
+		}
+		if(buttonPressed== fourthButton) {
+			askQuestion("____ was the first American women to be elected to Congress","Jeanette Rankin",800 );
+		}
+		if(buttonPressed== fifthButton) {
+			askQuestion("His code name was 'General' and was the first president to recieve a Secret Service codename","Harry Truman",1000);
+		}
+		
 			// Call the askQuestion() method with a harder question
 
 		// Clear the text on the button that was pressed (set the button text to nothing)
