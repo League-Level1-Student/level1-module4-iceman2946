@@ -1,4 +1,5 @@
 package _05_fortune_teller;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class FortuneTellerRunner {
@@ -9,6 +10,6 @@ public class FortuneTellerRunner {
 
     static void begin() {
         // Welcome the user. Give them a hint for the secret location.
-
+    	JOptionPane.showMessageDialog(null, "Welcome user. Your goal is to find the cordinates of the secret location by using your mouse. The cordinates are both greater than 100 with one cordinate greater than 350.");
     }
 }
