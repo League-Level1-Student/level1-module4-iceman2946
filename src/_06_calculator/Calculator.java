@@ -49,10 +49,38 @@ public class Calculator implements ActionListener {
 		JButton buttonPressed= (JButton) e.getSource();
 		int number1= Integer.parseInt(text.getText());
 		int number2= Integer.parseInt(text2.getText());
+		int answer = 0;
+		JLabel label= new JLabel();
+		panel.add(label);
 		if(buttonPressed==add) {
-			int answer5 = number1+number2;
-			//String answer= answer5.toString();
-			//JLabel answer1= new JLabel(answer5);
+			answer= number1+number2;
+			String addAnswer=Integer.toString(answer);
+			label.setText(addAnswer);
+			}
+		if(buttonPressed==subtract) {
+			if(number1>number2) {
+				answer=number1-number2;
+				}
+			if(number2>number1) {
+				answer=number2-number1;
+			}
+			String subAnswer=Integer.toString(answer);
+			label.setText(subAnswer);
+		}
+		if(buttonPressed==multiply) {
+			answer=number1 *number2;
+			String multiAnswer=Integer.toString(answer);
+			label.setText(multiAnswer);
+		}
+		if(buttonPressed==divide) {
+			if(number1>number2) {
+				answer=number1/number2;
+			}
+			if(number2>number1) {
+				answer=number2/number1;
+			}
+			String diviAnswer=Integer.toString(answer);
+			label.setText(diviAnswer);
 		}
 		
 	}
