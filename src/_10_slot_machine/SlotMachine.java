@@ -48,12 +48,11 @@ public class SlotMachine implements ActionListener {
 	JLabel imageLabel = new JLabel(icon);
 	return imageLabel;
 }
-	
+	int a=0;
+	int b=0;
+	int c=0;
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		int a=0;
-		int b=0;
-		int c=0;
 		panel.removeAll();
 		for(int i=0; i<3; i++) {
 			int x= r.nextInt(3);
@@ -61,20 +60,35 @@ public class SlotMachine implements ActionListener {
 			switch(x) {
 			case 0:
 				panel.add(createCherryLabel());
+				a+=1;
 				break;
 			case 1:
 				panel.add(createOrangeLabel());
+				b+=1;
 				break;
 			case 2:
 				panel.add(createTomatoLabel());
+				c+=1;
 				break;
 			}
 			}
 			catch (Exception k) {
-				
+				k.printStackTrace();
 			}
+
 			
-			
+		}
+		if(a==3) {
+			JLabel label= new JLabel("YOU WIN!");
+			panel.add(label);
+		}
+		else if(b==3) {
+			JLabel label1= new JLabel("YOU WIN!");
+			panel.add(label1);
+		}
+		else if(c==3) {
+			JLabel label2= new JLabel("YOU WIN!");
+			panel.add(label2);
 		}
 		panel.add(spin);
 		frame.pack();
